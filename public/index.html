@@ -106,6 +106,12 @@ footer a,footer span{overflow-wrap:anywhere}
 @keyframes kTabIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion: reduce){.k-panel article{animation:none}}
 @media (max-width: 760px){.k-tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;margin:0 -20px;padding-left:20px;padding-right:20px;scrollbar-width:none}.k-tabs::-webkit-scrollbar{display:none}}
+
+.k-cert{display:flex;align-items:center;justify-content:center;min-width:150px;height:72px;padding:14px 22px;border:1px solid rgba(242,230,220,.5);background:#F2E6DC;border-radius:4px}
+.k-cert img{display:block;max-height:36px;max-width:118px;width:auto;height:auto}
+.k-cert img + span{display:none}
+.k-certs .k-cert{width:164px;min-width:0}
+@media (max-width: 760px){.k-certs{display:grid!important;grid-template-columns:1fr 1fr;max-width:360px}.k-certs .k-cert{width:auto;height:64px;padding:12px 14px}.k-certs .k-cert img{max-width:100%;max-height:32px}}
 </style>
 </head>
 <body>
@@ -385,13 +391,13 @@ footer a,footer span{overflow-wrap:anywhere}
           <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; color: #E6BA05">CERTIFICAÇÕES</span>
           <h3 class="k-reveal" style="margin: 0; font-family: 'Fraunces', serif; font-weight: 700; font-size: 34px; line-height: 1.1">Conhecimento técnico comprovado.</h3>
         </div>
-        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 12px; font-family: 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: 0.08em">
-          <li style="border: 1px solid rgba(242,230,220,0.5); padding: 12px 18px">NUVEMSHOP</li>
-          <li style="border: 1px solid rgba(242,230,220,0.5); padding: 12px 18px">VTEX</li>
-          <li style="border: 1px solid rgba(242,230,220,0.5); padding: 12px 18px">SHOPIFY</li>
-          <li style="border: 1px solid rgba(242,230,220,0.5); padding: 12px 18px">TRAY</li>
-          <li style="border: 1px solid rgba(242,230,220,0.5); padding: 12px 18px">BLING</li>
-          <li style="border: 1px solid rgba(242,230,220,0.5); padding: 12px 18px">OLIST</li>
+        <ul class="k-certs" style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 12px; font-family: 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: 0.08em">
+          <li class="k-cert"><img src="logos/nuvemshop.png" alt="Nuvemshop" loading="lazy" onerror="this.remove()"><span>NUVEMSHOP</span></li>
+          <li class="k-cert"><img src="logos/vtex.png" alt="Vtex" loading="lazy" onerror="this.remove()"><span>VTEX</span></li>
+          <li class="k-cert"><img src="logos/shopify.png" alt="Shopify" loading="lazy" onerror="this.remove()"><span>SHOPIFY</span></li>
+          <li class="k-cert"><img src="logos/tray.png" alt="Tray" loading="lazy" onerror="this.remove()"><span>TRAY</span></li>
+          <li class="k-cert"><img src="logos/bling.svg" alt="Bling" loading="lazy" onerror="this.remove()"><span>BLING</span></li>
+          <li class="k-cert"><img src="logos/olist.png" alt="Olist" loading="lazy" onerror="this.remove()"><span>OLIST</span></li>
         </ul>
       </div>
     </div>
