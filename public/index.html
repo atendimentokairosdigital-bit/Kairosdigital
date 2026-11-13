@@ -142,6 +142,8 @@ section > .k-certband{padding-left:0!important;padding-right:0!important}
 @media (max-width: 760px){.k-hero-curve{display:none}#inicio > div{padding-top:44px!important;padding-bottom:64px!important}.k-hero-p{max-width:290px!important}}
 main > section > div{padding-top:75px!important;padding-bottom:75px!important}
 @media (max-width: 760px){main > section > div{padding-top:56px!important;padding-bottom:56px!important;gap:32px!important}}
+.k-trail{position:absolute;left:0;top:0;pointer-events:none;overflow:visible;display:block}
+.k-trail path{fill:none;stroke-width:2;stroke-linecap:round}
 </style>
 </head>
 <body>
@@ -183,7 +185,7 @@ main > section > div{padding-top:75px!important;padding-bottom:75px!important}
         <filter id="hglow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="60"></feGaussianBlur></filter>
       </defs>
       <rect width="900" height="420" fill="url(#hchk)" mask="url(#hmask)"></rect>
-      <path class="k-hero-curve" d="M-20 520 C 60 360, 160 190, 380 172 L 980 172" fill="none" stroke="#E6BA05" stroke-width="1.5"></path>
+      
       <circle cx="1120" cy="430" r="230" fill="#A86FA6" fill-opacity="0.45" filter="url(#hglow)"></circle>
       <polygon points="1040,0 1210,0 960,820 790,820" fill="#5A1229"></polygon>
       <polygon points="1236,0 1290,0 1040,820 986,820" fill="#1C4A2B"></polygon>
@@ -207,11 +209,7 @@ main > section > div{padding-top:75px!important;padding-bottom:75px!important}
 
   <!-- 03 MANIFESTO -->
   <section id="sobre" style="position: relative; overflow: hidden; background: #F2E6DC">
-    <svg class="k-sobre-art" viewBox="0 0 600 700" aria-hidden="true" style="position: absolute; right: -80px; top: 0; width: 600px; height: 100%; display: block" preserveAspectRatio="xMaxYMid slice">
-      <defs><mask id="kSobreMask" maskUnits="userSpaceOnUse" x="-200" y="-200" width="1100" height="1200"><path class="k-draw" d="M640 80 C 420 100, 340 220, 400 350 S 600 580, 470 740" fill="none" stroke="#fff" stroke-width="10" pathLength="1"></path></mask></defs>
-      <path class="k-draw" d="M600 40 C 380 60, 300 200, 360 340 S 560 560, 420 720" fill="none" stroke="#A86FA6" stroke-width="2" pathLength="1"></path>
-      <path d="M640 80 C 420 100, 340 220, 400 350 S 600 580, 470 740" fill="none" stroke="#A86FA6" stroke-width="2" stroke-dasharray="4 10" mask="url(#kSobreMask)"></path>
-    </svg>
+    
     <div style="position: relative; max-width: 1280px; margin: 0 auto; padding: 120px 32px; display: flex; flex-wrap: wrap; gap: 56px">
       <div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 20px">
         <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.2em; color: #5A1229">03 / MANIFESTO</span>
@@ -236,10 +234,10 @@ main > section > div{padding-top:75px!important;padding-bottom:75px!important}
       <path d="M-60 860 C 260 760, 520 900, 760 820 S 1180 640, 1500 720" fill="none" stroke="#E6BA05" stroke-width="96" stroke-dasharray="20 20" stroke-opacity="0.55"></path>
       <path d="M-60 860 C 260 760, 520 900, 760 820 S 1180 640, 1500 720" fill="none" stroke="#0C2214" stroke-width="82"></path>
       <path d="M-60 860 C 260 760, 520 900, 760 820 S 1180 640, 1500 720" fill="none" stroke="#F2E6DC" stroke-opacity="0.35" stroke-width="1.5" stroke-dasharray="3 12"></path>
-      <polygon points="1150,0 1250,0 960,1100 860,1100" fill="#5A1229"></polygon>
-      <polygon points="1272,0 1306,0 1016,1100 982,1100" fill="#A86FA6" fill-opacity="0.8"></polygon>
-      <polygon points="1330,0 1440,0 1440,80 1124,1100 1040,1100" fill="#E6BA05" fill-opacity="0.85"></polygon>
-      <polygon points="80,0 140,0 -120,1100 -180,1100" fill="#1C4A2B"></polygon>
+      
+      
+      
+      
     </svg>
     <div style="position: relative; max-width: 1280px; margin: 0 auto; padding: 120px 32px; display: flex; flex-direction: column; gap: 56px">
       <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
@@ -540,10 +538,60 @@ main > section > div{padding-top:75px!important;padding-bottom:75px!important}
     });
   });
   (function(){var u=document.querySelector('.k-certs');if(!u)return;var orig=[].slice.call(u.children);for(var n=0;n<3;n++)orig.forEach(function(li){var c=li.cloneNode(true);c.classList.add('k-clone');c.setAttribute('aria-hidden','true');u.appendChild(c);});})();
-(function(){var sec=document.getElementById('sobre'),art=sec&&sec.querySelector('.k-sobre-art');if(!art)return;
-if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){art.style.setProperty('--kd',0);return;}
-var tick=false;function upd(){tick=false;var r=sec.getBoundingClientRect(),vh=innerHeight;var p=(vh*0.85-r.top)/(vh*0.25+r.height);p=Math.max(0,Math.min(1,p));art.style.setProperty('--kd',(1-p).toFixed(4));}
-addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd);}},{passive:true});addEventListener('resize',upd);upd();})();
+
+(function(){
+var IDS=['inicio','sobre','solucoes'];
+var COR={inicio:'#E6BA05',sobre:'#A86FA6',solucoes:'#E6BA05'};
+var reduz=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+var segs=[];
+function rota(id,W,H,mob,sec){
+  var g=mob?9:30, b=mob?56:170;
+  if(id==='inicio'){
+    var dash=sec.querySelector('.k-line > span'), r=dash.getBoundingClientRect(), sr=sec.getBoundingClientRect();
+    var dx=r.left-sr.left, dy=r.top-sr.top+1;
+    var y1=Math.min(dy+140,H*0.4);
+    return 'M'+dx+' '+dy+' C '+(dx-(dx-g)*0.7)+' '+dy+', '+g+' '+(dy+20)+', '+g+' '+y1+
+      ' L '+g+' '+(H-120)+' C '+g+' '+(H-22)+', '+(W*0.38)+' '+(H-14)+', '+(W*0.5)+' '+H;
+  }
+  if(id==='sobre'){
+    return 'M'+(W*0.5)+' 0 C '+(W*0.62)+' 26, '+(W-g)+' 30, '+(W-g)+' 130'+
+      ' C '+(W-g)+' '+(H*0.32)+', '+(W-b)+' '+(H*0.36)+', '+(W-b)+' '+(H*0.52)+
+      ' S '+(W-g)+' '+(H*0.74)+', '+(W-g)+' '+(H-170)+
+      ' C '+(W-g)+' '+(H-50)+', '+(W*0.62)+' '+(H-26)+', '+(W*0.5)+' '+H;
+  }
+  return 'M'+(W*0.5)+' 0 C '+(W*0.3)+' 12, '+g+' 10, '+g+' 70 L '+g+' '+(H-60);
+}
+function montar(){
+  segs=[]; var mob=innerWidth<=760;
+  IDS.forEach(function(id){
+    var sec=document.getElementById(id); if(!sec)return;
+    var svg=sec.querySelector(':scope > svg.k-trail');
+    if(!svg){svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('class','k-trail');svg.setAttribute('aria-hidden','true');
+      var p=document.createElementNS('http://www.w3.org/2000/svg','path');svg.appendChild(p);
+      var conteudo=sec.querySelector(':scope > div'); sec.insertBefore(svg,conteudo);}
+    var W=sec.clientWidth,H=sec.offsetHeight;
+    svg.setAttribute('width',W);svg.setAttribute('height',H);svg.setAttribute('viewBox','0 0 '+W+' '+H);
+    var path=svg.firstChild; path.setAttribute('d',rota(id,W,H,mob,sec)); path.setAttribute('stroke',COR[id]);
+    var L=path.getTotalLength(), top=sec.getBoundingClientRect().top+scrollY, am=[];
+    for(var i=0;i<=80;i++){var l=L*i/80;am.push([l,top+path.getPointAtLength(l).y]);}
+    path.style.strokeDasharray=L+' '+L;
+    segs.push({p:path,L:L,am:am});
+  });
+  desenhar();
+}
+function desenhar(){
+  var ponta=scrollY+innerHeight*0.72;
+  segs.forEach(function(s){
+    var d=0; if(reduz){d=s.L;} else {for(var i=0;i<s.am.length;i++){if(s.am[i][1]<=ponta)d=s.am[i][0];else break;}
+      if(d<s.L&&d>0){var i2=s.am.findIndex(function(x){return x[0]>d});if(i2>0){var a=s.am[i2-1],b=s.am[i2];d=a[0]+(b[0]-a[0])*Math.max(0,Math.min(1,(ponta-a[1])/((b[1]-a[1])||1)));}}}
+    s.p.style.strokeDashoffset=(s.L-d);
+  });
+}
+var t=false;addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(function(){t=false;desenhar();});}},{passive:true});
+var rz;addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(montar,150);});
+if(document.readyState==='complete')montar();else addEventListener('load',montar);
+setTimeout(montar,1200);
+})();
 var form = document.getElementById('k-form');
   if (form) {
     form.addEventListener('submit', function(e){
