@@ -137,7 +137,8 @@ footer a,footer span{overflow-wrap:anywhere}
 }
 section > .k-certband{padding-left:0!important;padding-right:0!important}
 @media (prefers-reduced-motion: reduce){.k-certs{animation:none}.k-certs-wrap{overflow-x:auto}.k-cert.k-clone{display:none}}
-@media (max-width: 760px){.k-sobre-art{right:-330px!important;opacity:.4}}
+.k-sobre-art .k-draw{stroke-dasharray:1 1;stroke-dashoffset:var(--kd,0)}
+#sobre > div > div{filter:drop-shadow(0 0 1.5px #F2E6DC) drop-shadow(0 0 3px #F2E6DC) drop-shadow(0 0 5px #F2E6DC)}
 </style>
 </head>
 <body>
@@ -204,8 +205,9 @@ section > .k-certband{padding-left:0!important;padding-right:0!important}
   <!-- 03 MANIFESTO -->
   <section id="sobre" style="position: relative; overflow: hidden; background: #F2E6DC">
     <svg class="k-sobre-art" viewBox="0 0 600 700" aria-hidden="true" style="position: absolute; right: -80px; top: 0; width: 600px; height: 100%; display: block" preserveAspectRatio="xMaxYMid slice">
-      <path d="M600 40 C 380 60, 300 200, 360 340 S 560 560, 420 720" fill="none" stroke="#A86FA6" stroke-width="2"></path>
-      <path d="M640 80 C 420 100, 340 220, 400 350 S 600 580, 470 740" fill="none" stroke="#A86FA6" stroke-width="2" stroke-dasharray="4 10"></path>
+      <defs><mask id="kSobreMask" maskUnits="userSpaceOnUse" x="-200" y="-200" width="1100" height="1200"><path class="k-draw" d="M640 80 C 420 100, 340 220, 400 350 S 600 580, 470 740" fill="none" stroke="#fff" stroke-width="10" pathLength="1"></path></mask></defs>
+      <path class="k-draw" d="M600 40 C 380 60, 300 200, 360 340 S 560 560, 420 720" fill="none" stroke="#A86FA6" stroke-width="2" pathLength="1"></path>
+      <path d="M640 80 C 420 100, 340 220, 400 350 S 600 580, 470 740" fill="none" stroke="#A86FA6" stroke-width="2" stroke-dasharray="4 10" mask="url(#kSobreMask)"></path>
     </svg>
     <div style="position: relative; max-width: 1280px; margin: 0 auto; padding: 120px 32px; display: flex; flex-wrap: wrap; gap: 56px">
       <div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 20px">
@@ -535,6 +537,10 @@ section > .k-certband{padding-left:0!important;padding-right:0!important}
     });
   });
   (function(){var u=document.querySelector('.k-certs');if(!u)return;var orig=[].slice.call(u.children);for(var n=0;n<3;n++)orig.forEach(function(li){var c=li.cloneNode(true);c.classList.add('k-clone');c.setAttribute('aria-hidden','true');u.appendChild(c);});})();
+(function(){var sec=document.getElementById('sobre'),art=sec&&sec.querySelector('.k-sobre-art');if(!art)return;
+if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){art.style.setProperty('--kd',0);return;}
+var tick=false;function upd(){tick=false;var r=sec.getBoundingClientRect(),vh=innerHeight;var p=(vh-r.top)/(vh*0.35+r.height*0.75);p=Math.max(0,Math.min(1,p));art.style.setProperty('--kd',(1-p).toFixed(4));}
+addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd);}},{passive:true});addEventListener('resize',upd);upd();})();
 var form = document.getElementById('k-form');
   if (form) {
     form.addEventListener('submit', function(e){
