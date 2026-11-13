@@ -139,6 +139,7 @@ section > .k-certband{padding-left:0!important;padding-right:0!important}
 @media (prefers-reduced-motion: reduce){.k-certs{animation:none}.k-certs-wrap{overflow-x:auto}.k-cert.k-clone{display:none}}
 .k-sobre-art .k-draw{stroke-dasharray:1 1;stroke-dashoffset:var(--kd,0)}
 #sobre > div > div{filter:drop-shadow(0 0 1.5px #F2E6DC) drop-shadow(0 0 3px #F2E6DC) drop-shadow(0 0 5px #F2E6DC)}
+@media (max-width: 760px){.k-hero-curve{display:none}#inicio > div{padding-top:44px!important;padding-bottom:64px!important}}
 </style>
 </head>
 <body>
@@ -180,7 +181,7 @@ section > .k-certband{padding-left:0!important;padding-right:0!important}
         <filter id="hglow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="60"></feGaussianBlur></filter>
       </defs>
       <rect width="900" height="420" fill="url(#hchk)" mask="url(#hmask)"></rect>
-      <path d="M-20 520 C 60 360, 160 190, 380 172 L 980 172" fill="none" stroke="#E6BA05" stroke-width="1.5"></path>
+      <path class="k-hero-curve" d="M-20 520 C 60 360, 160 190, 380 172 L 980 172" fill="none" stroke="#E6BA05" stroke-width="1.5"></path>
       <circle cx="1120" cy="430" r="230" fill="#A86FA6" fill-opacity="0.45" filter="url(#hglow)"></circle>
       <polygon points="1040,0 1210,0 960,820 790,820" fill="#5A1229"></polygon>
       <polygon points="1236,0 1290,0 1040,820 986,820" fill="#1C4A2B"></polygon>
