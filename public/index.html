@@ -142,6 +142,18 @@ section > .k-certband{padding-left:0!important;padding-right:0!important}
 @media (max-width: 760px){.k-hero-curve{display:none}#inicio > div{padding-top:44px!important;padding-bottom:64px!important}.k-hero-p{max-width:290px!important}}
 main > section > div{padding-top:75px!important;padding-bottom:75px!important}
 @media (max-width: 760px){main > section > div{padding-top:56px!important;padding-bottom:56px!important;gap:32px!important}}
+.k-prog{position:relative;height:10px;background:#272224;border-top:1px solid rgba(242,230,220,.12)}
+.k-prog::before{content:"";position:absolute;left:22px;right:22px;top:50%;height:1px;transform:translateY(-50%);background:repeating-linear-gradient(90deg,#E6BA05 0 8px,transparent 8px 16px);opacity:.55}
+.k-prog-start,.k-prog-flag{position:absolute;top:0;bottom:0;width:14px;background:conic-gradient(#F2E6DC 25%,#111 0 50%,#F2E6DC 0 75%,#111 0) 0 0/5px 5px}
+.k-prog-start{left:0}.k-prog-flag{right:0;transition:box-shadow .4s}
+.k-prog-fill{position:absolute;left:14px;top:0;bottom:0;width:0;background:linear-gradient(90deg,rgba(230,186,5,.15),rgba(230,186,5,.55))}
+.k-prog-car{position:absolute;top:50%;left:14px;width:28px;height:13px;margin-top:-7px;border-radius:3px 7px 4px 3px;background:#F2E6DC;box-shadow:inset -4px 0 0 #E6BA05,0 2px 4px rgba(0,0,0,.5);will-change:transform}
+.k-prog-car::before,.k-prog-car::after{content:"";position:absolute;bottom:-3px;width:6px;height:6px;border-radius:50%;background:#111}
+.k-prog-car::before{left:4px}.k-prog-car::after{right:6px}
+.k-prog.k-fim .k-prog-flag{box-shadow:0 0 12px 2px rgba(230,186,5,.8)}
+.k-chegada{margin:0;position:relative;z-index:1;height:28px;display:flex;align-items:center;justify-content:center;background:conic-gradient(#F2E6DC 25%,#111 0 50%,#F2E6DC 0 75%,#111 0) 0 0/14px 14px}
+.k-chegada span{background:#2B0713;color:#E6BA05;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.25em;padding:6px 16px}
+@media (max-width: 760px){.k-prog{height:8px}.k-prog-car{width:22px;height:11px;margin-top:-6px}.k-chegada{height:24px}.k-chegada span{font-size:11px}}
 </style>
 </head>
 <body>
@@ -170,6 +182,7 @@ main > section > div{padding-top:75px!important;padding-bottom:75px!important}
         <a class="k-btn k-gold" href="#contato" style="min-height: 46px; padding: 10px 20px">Vamos conversar<svg viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px; display: block"><path d="M3 12 H18 M12 5 L19 12 L12 19" fill="none" stroke="currentColor" stroke-width="2.4"></path></svg></a>
       </nav>
     </div>
+    <div class="k-prog" aria-hidden="true"><span class="k-prog-start"></span><span class="k-prog-fill"></span><span class="k-prog-car"></span><span class="k-prog-flag"></span></div>
   </header>
 
   <!-- 02 HERO -->
@@ -233,13 +246,6 @@ main > section > div{padding-top:75px!important;padding-bottom:75px!important}
       <circle cx="300" cy="640" r="250" fill="#A86FA6" fill-opacity="0.55" filter="url(#sglow)"></circle>
       <circle cx="1120" cy="520" r="300" fill="#5A1229" filter="url(#sglow)"></circle>
       <circle cx="760" cy="980" r="200" fill="#E6BA05" fill-opacity="0.35" filter="url(#sglow)"></circle>
-      <path d="M-60 860 C 260 760, 520 900, 760 820 S 1180 640, 1500 720" fill="none" stroke="#E6BA05" stroke-width="96" stroke-dasharray="20 20" stroke-opacity="0.55"></path>
-      <path d="M-60 860 C 260 760, 520 900, 760 820 S 1180 640, 1500 720" fill="none" stroke="#0C2214" stroke-width="82"></path>
-      <path d="M-60 860 C 260 760, 520 900, 760 820 S 1180 640, 1500 720" fill="none" stroke="#F2E6DC" stroke-opacity="0.35" stroke-width="1.5" stroke-dasharray="3 12"></path>
-      <polygon points="1150,0 1250,0 960,1100 860,1100" fill="#5A1229"></polygon>
-      <polygon points="1272,0 1306,0 1016,1100 982,1100" fill="#A86FA6" fill-opacity="0.8"></polygon>
-      <polygon points="1330,0 1440,0 1440,80 1124,1100 1040,1100" fill="#E6BA05" fill-opacity="0.85"></polygon>
-      <polygon points="80,0 140,0 -120,1100 -180,1100" fill="#1C4A2B"></polygon>
     </svg>
     <div style="position: relative; max-width: 1280px; margin: 0 auto; padding: 120px 32px; display: flex; flex-direction: column; gap: 56px">
       <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px">
@@ -314,9 +320,6 @@ main > section > div{padding-top:75px!important;padding-bottom:75px!important}
       <circle cx="380" cy="600" r="240" fill="#A86FA6" fill-opacity="0.5" filter="url(#pglow)"></circle>
       <circle cx="1100" cy="560" r="220" fill="#E6BA05" fill-opacity="0.35" filter="url(#pglow)"></circle>
       <rect x="1000" y="0" width="440" height="300" fill="url(#pchk)" fill-opacity="0.8"></rect>
-      <polygon points="200,900 280,900 560,340 480,340" fill="#5A1229"></polygon>
-      <polygon points="300,900 326,900 606,340 580,340" fill="#1C4A2B"></polygon>
-      <polygon points="346,900 372,900 652,340 626,340" fill="#E6BA05"></polygon>
       <path d="M-40 640 C 300 560, 600 700, 900 620 S 1300 520, 1480 600" fill="none" stroke="#5A1229" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="4 10"></path>
     </svg>
     <div style="position: relative; max-width: 1280px; margin: 0 auto; padding: 120px 32px; display: flex; flex-direction: column; gap: 56px">
@@ -366,9 +369,6 @@ main > section > div{padding-top:75px!important;padding-bottom:75px!important}
       <circle cx="760" cy="760" r="180" fill="#E6BA05" fill-opacity="0.3" filter="url(#tglow)"></circle>
       <g fill="none" stroke="#F2E6DC" stroke-opacity="0.12" stroke-width="1.5" transform="translate(860 120) scale(1.9)"><path d="M 60 160 C 30 160, 25 120, 55 108 L 130 78 C 150 70, 150 45, 175 38 L 245 28 C 275 24, 290 50, 268 70 L 222 108 C 208 120, 220 134, 244 138 C 272 143, 270 176, 240 178 L 90 178 C 72 178, 66 168, 60 160 Z"></path></g>
       <g fill="none" stroke="#E6BA05" stroke-opacity="0.35" stroke-width="1.5" stroke-dasharray="3 9" transform="translate(-60 380) scale(1.6)"><path d="M 60 160 C 30 160, 25 120, 55 108 L 130 78 C 150 70, 150 45, 175 38 L 245 28 C 275 24, 290 50, 268 70 L 222 108 C 208 120, 220 134, 244 138 C 272 143, 270 176, 240 178 L 90 178 C 72 178, 66 168, 60 160 Z"></path></g>
-      <polygon points="1210,0 1260,0 1030,900 980,900" fill="#5A1229"></polygon>
-      <polygon points="1290,0 1306,0 1076,900 1060,900" fill="#A86FA6" fill-opacity="0.7"></polygon>
-      <polygon points="1340,0 1400,0 1170,900 1110,900" fill="#E6BA05" fill-opacity="0.75"></polygon>
     </svg>
     <div style="position: relative; max-width: 1280px; margin: 0 auto; padding: 120px 32px 96px; display: flex; flex-direction: column; gap: 48px">
       <div style="display: flex; flex-direction: column; gap: 18px; max-width: 820px">
@@ -424,9 +424,6 @@ main > section > div{padding-top:75px!important;padding-bottom:75px!important}
     </div>
   </section><section style="position: relative; overflow: hidden; background: #2B0713; color: #F2E6DC">
     <svg viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block">
-      <polygon points="1290,0 1330,0 1130,800 1090,800" fill="#5A1229"></polygon>
-      <polygon points="1350,0 1366,0 1166,800 1150,800" fill="#A86FA6" fill-opacity="0.6"></polygon>
-      <polygon points="1392,0 1440,0 1440,40 1250,800 1204,800" fill="#E6BA05" fill-opacity="0.7"></polygon>
       <g stroke-linecap="round">
         <line x1="760" y1="110" x2="1500" y2="110" stroke="#E6BA05" stroke-width="3" stroke-opacity="0.6"></line>
         <line x1="900" y1="138" x2="1500" y2="138" stroke="#F2E6DC" stroke-width="1.5" stroke-opacity="0.25"></line>
@@ -453,6 +450,7 @@ main > section > div{padding-top:75px!important;padding-bottom:75px!important}
 
   <!-- 09 CTA + FORMULÁRIO -->
   <section id="contato" style="position: relative; overflow: hidden; background: #5A1229; color: #F2E6DC">
+    <p class="k-chegada" aria-hidden="true"><span>LINHA DE CHEGADA</span></p>
     <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block">
       <path d="M-60 300 C 200 260, 360 420, 300 620 S 420 940, 700 980" fill="none" stroke="#E6BA05" stroke-width="120" stroke-dasharray="22 22" stroke-opacity="0.5"></path>
       <path d="M-60 300 C 200 260, 360 420, 300 620 S 420 940, 700 980" fill="none" stroke="#4A0E20" stroke-width="104"></path>
@@ -544,6 +542,9 @@ main > section > div{padding-top:75px!important;padding-bottom:75px!important}
 if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){art.style.setProperty('--kd',0);return;}
 var tick=false;function upd(){tick=false;var r=sec.getBoundingClientRect(),vh=innerHeight;var p=(vh*0.85-r.top)/(vh*0.25+r.height);p=Math.max(0,Math.min(1,p));art.style.setProperty('--kd',(1-p).toFixed(4));}
 addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd);}},{passive:true});addEventListener('resize',upd);upd();})();
+(function(){var bar=document.querySelector('.k-prog');if(!bar)return;var car=bar.querySelector('.k-prog-car'),fill=bar.querySelector('.k-prog-fill');var t=false;
+function upd(){t=false;var max=document.documentElement.scrollHeight-innerHeight;var p=max>0?Math.min(1,Math.max(0,scrollY/max)):0;var w=bar.clientWidth-28-car.offsetWidth;var x=p*w;car.style.transform='translateX('+x+'px)';fill.style.width=(x+car.offsetWidth/2)+'px';bar.classList.toggle('k-fim',p>0.985);}
+addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(upd);}},{passive:true});addEventListener('resize',upd);upd();})();
 var form = document.getElementById('k-form');
   if (form) {
     form.addEventListener('submit', function(e){
