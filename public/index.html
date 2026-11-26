@@ -143,6 +143,20 @@ section > .k-certband{padding-left:0!important;padding-right:0!important}
 main > section > div{padding-top:75px!important;padding-bottom:75px!important}
 @media (max-width: 760px){main > section > div{padding-top:56px!important;padding-bottom:56px!important;gap:32px!important}}
 html{scroll-padding-top:var(--k-head,120px)}
+.k-cases{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:28px}
+.k-case{padding:24px 24px 28px;display:flex;flex-direction:column;gap:14px}
+.k-case-shots{position:relative;padding:0 48px 36px 0;margin-bottom:10px}
+.k-browser{border-radius:10px;overflow:hidden;background:#F2E6DC;box-shadow:0 22px 40px -20px rgba(0,0,0,.7)}
+.k-browser-bar{height:22px;display:flex;align-items:center;gap:6px;padding:0 10px;background:#E8DACC}
+.k-browser-bar i{width:8px;height:8px;border-radius:50%;background:#C8B4A2}
+.k-browser img{display:block;width:100%;height:auto}
+.k-phone{position:absolute;right:0;bottom:0;width:27%;max-width:150px;padding:5px;border-radius:20px;background:#141012;box-shadow:0 18px 30px -12px rgba(0,0,0,.75);transition:transform .35s ease}
+.k-phone img{display:block;width:100%;height:auto;border-radius:15px}
+.k-case:hover .k-phone{transform:translateY(-6px)}
+.k-case-tag{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;color:#E6BA05}
+.k-case-link{align-self:flex-start;margin-top:6px;font-family:'Manrope',sans-serif;font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#E6BA05;text-decoration:none;border-bottom:2px dashed rgba(230,186,5,.6);padding-bottom:4px}
+.k-case-link:hover{border-bottom-style:solid}
+@media (max-width: 760px){.k-case{padding:16px 16px 22px}.k-case-shots{padding:0 34px 28px 0}}
 </style>
 </head>
 <body>
@@ -167,7 +181,7 @@ html{scroll-padding-top:var(--k-head,120px)}
         <a class="k-nav" href="#sobre"><span>02</span>Sobre</a>
         <a class="k-nav" href="#solucoes"><span>03</span>Soluções</a>
         <a class="k-nav" href="#para-quem"><span>04</span>Para quem</a>
-        <a class="k-nav" href="#tecnologias"><span>05</span>Tecnologias</a>
+        <a class="k-nav" href="#cases"><span>05</span>Cases</a>
         <a class="k-nav" href="#diferenciais"><span>06</span>Diferenciais</a>
         <a class="k-nav" href="#contato"><span>07</span>Contato</a>
         <a class="k-btn k-gold" href="#contato" style="min-height: 46px; padding: 10px 16px; margin-left: 6px">Vamos conversar<svg viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px; display: block"><path d="M3 12 H18 M12 5 L19 12 L12 19" fill="none" stroke="currentColor" stroke-width="2.4"></path></svg></a>
@@ -351,7 +365,7 @@ html{scroll-padding-top:var(--k-head,120px)}
   </section>
 
   <!-- 06 TECNOLOGIAS -->
-  <section id="tecnologias" style="position: relative; overflow: hidden; background: #2B0713; color: #F2E6DC">
+  <section id="cases" style="position: relative; overflow: hidden; background: #2B0713; color: #F2E6DC">
     <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block">
       <defs><filter id="tglow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="70"></feGaussianBlur></filter></defs>
       <circle cx="320" cy="560" r="240" fill="#A86FA6" fill-opacity="0.5" filter="url(#tglow)"></circle>
@@ -362,44 +376,32 @@ html{scroll-padding-top:var(--k-head,120px)}
     </svg>
     <div style="position: relative; max-width: 1280px; margin: 0 auto; padding: 120px 32px 96px; display: flex; flex-direction: column; gap: 48px">
       <div style="display: flex; flex-direction: column; gap: 18px; max-width: 820px">
-        <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.2em; color: #E6BA05">05 / TECNOLOGIAS</span>
-        <h2 class="k-reveal k-h2-d" style="margin: 0; font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(36px, 4vw, 56px); line-height: 1.05; letter-spacing: -0.01em">Conectamos as ferramentas que fazem seu negócio funcionar.</h2>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.2em; color: #E6BA05">05 / CASES</span>
+        <h2 class="k-reveal k-h2-d" style="margin: 0; font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(36px, 4vw, 56px); line-height: 1.05; letter-spacing: -0.01em">Projetos que saíram da nossa garagem.</h2>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #EEDDEB; max-width: 620px">Lojas e catálogos que a Kairós criou ou reformulou, cada um pensado para o jeito de vender do cliente.</p>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px">
-        <article class="k-glass-d k-lift k-reveal" style="padding: 28px; display: flex; flex-direction: column; gap: 20px">
-          <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
-            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; color: #E6BA05">BOX 01</span>
-            <svg viewBox="0 0 60 12" aria-hidden="true" style="width: 60px; height: 12px; display: block"><polygon points="0,12 6,0 22,0 16,12" fill="#E6BA05"></polygon><polygon points="20,12 26,0 32,0 26,12" fill="#F2E6DC" fill-opacity="0.5"></polygon><polygon points="34,12 40,0 44,0 38,12" fill="#F2E6DC" fill-opacity="0.3"></polygon></svg>
+      <div class="k-cases">
+        <article class="k-case k-glass-d k-lift k-reveal">
+          <div class="k-case-shots">
+            <div class="k-browser"><div class="k-browser-bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="cases/crby-desktop.jpg" alt="Loja CR.BY Caroline Rodrigues no computador" width="800" height="425" loading="lazy"></div>
+            <div class="k-phone"><img src="cases/crby-mobile.jpg" alt="Loja CR.BY Caroline Rodrigues no celular" width="450" height="798" loading="lazy"></div>
           </div>
-          <h3 class="k-reveal" style="margin: 0; font-family: 'Fraunces', serif; font-weight: 700; font-size: 26px; line-height: 1.1">Plataformas de e-commerce</h3>
-          <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 10px"><li class="k-chip" style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 15px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #E6BA05"></span>Shopify</li><li class="k-chip" style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 15px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #E6BA05"></span>Nuvemshop</li><li class="k-chip" style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 15px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #E6BA05"></span>Tray</li><li class="k-chip" style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 15px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #E6BA05"></span>VTEX</li></ul>
+          <span class="k-case-tag">RELAYOUT · NUVEMSHOP</span>
+          <h3 style="margin: 0; font-family: 'Fraunces', serif; font-weight: 700; font-size: 28px; line-height: 1.1">CR.BY Caroline Rodrigues</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #EEDDEB">Relayout da loja de moda feminina na Nuvemshop, com nova vitrine, navegação por categorias e destaque para as coleções.</p>
         </article>
-        <article class="k-glass-d k-lift k-reveal" style="padding: 28px; display: flex; flex-direction: column; gap: 20px">
-          <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
-            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; color: #E6BA05">BOX 02</span>
-            <svg viewBox="0 0 60 12" aria-hidden="true" style="width: 60px; height: 12px; display: block"><polygon points="0,12 6,0 22,0 16,12" fill="#A86FA6"></polygon><polygon points="20,12 26,0 32,0 26,12" fill="#F2E6DC" fill-opacity="0.5"></polygon><polygon points="34,12 40,0 44,0 38,12" fill="#F2E6DC" fill-opacity="0.3"></polygon></svg>
+        <article class="k-case k-glass-d k-lift k-reveal">
+          <div class="k-case-shots">
+            <div class="k-browser"><div class="k-browser-bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="cases/abbaju-desktop.jpg" alt="Catálogo da AbbaJu Mimos no computador" width="800" height="425" loading="lazy"></div>
+            <div class="k-phone"><img src="cases/abbaju-mobile.jpg" alt="Catálogo da AbbaJu Mimos no celular" width="450" height="798" loading="lazy"></div>
           </div>
-          <h3 class="k-reveal" style="margin: 0; font-family: 'Fraunces', serif; font-weight: 700; font-size: 26px; line-height: 1.1">ERPs e gestão</h3>
-          <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 10px"><li class="k-chip" style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 15px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #A86FA6"></span>Bling</li><li class="k-chip" style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 15px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #A86FA6"></span>Olist</li></ul>
-        </article>
-        <article class="k-glass-d k-lift k-reveal" style="padding: 28px; display: flex; flex-direction: column; gap: 20px">
-          <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
-            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; color: #E6BA05">BOX 03</span>
-            <svg viewBox="0 0 60 12" aria-hidden="true" style="width: 60px; height: 12px; display: block"><polygon points="0,12 6,0 22,0 16,12" fill="#F2E6DC"></polygon><polygon points="20,12 26,0 32,0 26,12" fill="#F2E6DC" fill-opacity="0.5"></polygon><polygon points="34,12 40,0 44,0 38,12" fill="#F2E6DC" fill-opacity="0.3"></polygon></svg>
-          </div>
-          <h3 class="k-reveal" style="margin: 0; font-family: 'Fraunces', serif; font-weight: 700; font-size: 26px; line-height: 1.1">Marketplaces e canais</h3>
-          <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 10px"><li class="k-chip" style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 15px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #F2E6DC"></span>Shopee</li><li class="k-chip" style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 15px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #F2E6DC"></span>Mercado Livre</li><li class="k-chip" style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 15px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #F2E6DC"></span>TikTok Shop</li><li class="k-chip" style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 15px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #F2E6DC"></span>Temu</li></ul>
-        </article>
-        <article class="k-glass-d k-lift k-reveal" style="padding: 28px; display: flex; flex-direction: column; gap: 20px">
-          <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
-            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; color: #E6BA05">BOX 04</span>
-            <svg viewBox="0 0 60 12" aria-hidden="true" style="width: 60px; height: 12px; display: block"><polygon points="0,12 6,0 22,0 16,12" fill="#E6BA05"></polygon><polygon points="20,12 26,0 32,0 26,12" fill="#F2E6DC" fill-opacity="0.5"></polygon><polygon points="34,12 40,0 44,0 38,12" fill="#F2E6DC" fill-opacity="0.3"></polygon></svg>
-          </div>
-          <h3 class="k-reveal" style="margin: 0; font-family: 'Fraunces', serif; font-weight: 700; font-size: 26px; line-height: 1.1">Automação e IA</h3>
-          <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 10px"><li class="k-chip" style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 15px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #E6BA05"></span>Ferramentas de IA</li><li class="k-chip" style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 15px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #E6BA05"></span>APIs e integrações</li></ul>
+          <span class="k-case-tag">CATÁLOGO INTERATIVO</span>
+          <h3 style="margin: 0; font-family: 'Fraunces', serif; font-weight: 700; font-size: 28px; line-height: 1.1">AbbaJu Mimos</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #EEDDEB">Catálogo interativo de laços, faixas e tiaras infantis, com coleção de Natal, laços personalizados e pedido direto pelo WhatsApp.</p>
+          <a class="k-case-link" href="https://abbaju-catalog.atendimento-kairosdigital.workers.dev/" target="_blank" rel="noopener">Ver catálogo <span aria-hidden="true">→</span></a>
         </article>
       </div>
-      <p style="margin: 0; font-size: 13px; color: #EEDDEB">Marcas citadas pertencem aos seus respectivos titulares. A Kairós trabalha com essas ferramentas; a menção não indica parceria oficial.</p>
+      <p style="margin: 0; font-size: 13px; color: #EEDDEB">Marcas citadas pertencem aos seus respectivos titulares.</p>
     </div>
     <!-- CERTIFICAÇÕES (inspirado em “Somos certificados” da Numai) -->
     <div class="k-certband">
@@ -480,7 +482,7 @@ html{scroll-padding-top:var(--k-head,120px)}
           <span style="display: flex; align-items: center; gap: 14px"><svg viewBox="0 0 250 140" aria-hidden="true" style="width: 64px; height: 36px; display: block; flex-shrink: 0"><polygon points="82.6,30 112.6,30 100.0,58 70.0,58" fill="#F2E6DC"></polygon><polygon points="40.0,58 70.0,58 57.4,86 27.4,86" fill="#F2E6DC"></polygon><polygon points="57.4,86 87.4,86 74.8,114 44.8,114" fill="#E6BA05"></polygon><polygon points="-2.6,86 27.4,86 14.8,114 -15.2,114" fill="#F2E6DC" fill-opacity="0.45"></polygon><polygon points="96,126 124,126 174.4,14 146.4,14" fill="#F2E6DC"></polygon><polygon points="143,84 212,14 246,14 150,112" fill="#F2E6DC"></polygon><polygon points="160,100 176,84 240,126 206,126" fill="#F2E6DC"></polygon></svg><span style="display: flex; flex-direction: column; align-items: flex-end; gap: 2px"><span style="font-family: 'Fraunces', serif; font-weight: 700; font-size: 30px; line-height: 0.9; letter-spacing: -0.01em; color: #F2E6DC">Kairós</span><span style="font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 9px; letter-spacing: 0.55em; margin-right: -0.55em; color: #F2E6DC">DIGITAL</span></span></span>
           <p style="margin: 0; line-height: 1.6; color: #EEDDEB">Desenvolvemos, integramos, automatizamos e sustentamos operações de e-commerce.</p>
         </div>
-        <nav aria-label="Rodapé" style="display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; color: #E6BA05">NAVEGAÇÃO</span><a href="#inicio" style="text-decoration: none">Início</a><a href="#sobre" style="text-decoration: none">Sobre</a><a href="#solucoes" style="text-decoration: none">Soluções</a><a href="#para-quem" style="text-decoration: none">Para quem</a><a href="#tecnologias" style="text-decoration: none">Tecnologias</a><a href="#diferenciais" style="text-decoration: none">Diferenciais</a><a href="#contato" style="text-decoration: none">Contato</a></nav>
+        <nav aria-label="Rodapé" style="display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; color: #E6BA05">NAVEGAÇÃO</span><a href="#inicio" style="text-decoration: none">Início</a><a href="#sobre" style="text-decoration: none">Sobre</a><a href="#solucoes" style="text-decoration: none">Soluções</a><a href="#para-quem" style="text-decoration: none">Para quem</a><a href="#cases" style="text-decoration: none">Cases</a><a href="#diferenciais" style="text-decoration: none">Diferenciais</a><a href="#contato" style="text-decoration: none">Contato</a></nav>
         <div style="display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; color: #E6BA05">SERVIÇOS</span><span>Development &amp; Technology</span><span>E-commerce Operations</span><span>Integration &amp; Automation</span></div>
         <div style="display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; color: #E6BA05">TECNOLOGIAS</span><span>Shopify · Nuvemshop · Tray · VTEX</span><span>Bling · Olist</span><span>Shopee · Mercado Livre · TikTok Shop · Temu</span><span>IA e integrações</span></div>
         <div style="display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; color: #E6BA05">CONTATO</span><a href="https://instagram.com/laarismaximo" target="_blank" rel="noopener" style="text-decoration: none">Instagram @laarismaximo</a><a href="https://wa.me/5511948648739" target="_blank" rel="noopener" style="text-decoration: none">WhatsApp (11) 94864-8739</a><a href="mailto:atendimento.kairosdigital@gmail.com" style="text-decoration: none">atendimento.kairosdigital@gmail.com</a></div>
